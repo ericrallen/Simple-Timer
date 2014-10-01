@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Darwin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,12 +15,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //variables for setting up our menu
     var statusBar = NSStatusBar.systemStatusBar();
     var statusBarItem : NSStatusItem = NSStatusItem();
-    var menu: NSMenu = NSMenu();
+    var menu : NSMenu = NSMenu();
 
     //array of items for our menus and the functions they should trigger when clicked
     var menuItems = [
+        (name : "00:00", act : Selector("toggleTimer")),
         (name : "Start Timer", act : Selector("toggleTimer")),
-        (name : "Reset Timer", act : Selector("resetTimer"))
+        (name : "Reset Timer", act : Selector("resetTimer")),
+        (name : "Quit", act : Selector("quitSimpleTimer"))
     ];
     
     //timer
@@ -35,10 +38,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //this adds our menu to the menu bar
     //borrowed from:  http://www.johnmullins.co/blog/2014/08/08/menubar-app/
     override func awakeFromNib() {
+        //set up image for menu bar
+        var menuImage : NSImage = NSImage(named : "stopwatch");
+        menuImage.size = NSSize(width : 16, height : 16);
+
         //Add statusBarItem
         statusBarItem = statusBar.statusItemWithLength(-1);
         statusBarItem.menu = menu;
-        statusBarItem.title = "[00:00:00]";
+        statusBarItem.image = menuImage;
+        statusBarItem.highlightMode = true;
 
         //iterate through menu items and add them to the status bar menu
         for item in menuItems {
@@ -74,7 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var status = checkStatus();
         
         //get first menu item so we can change the text based on status
-        var menuItem = menu.itemAtIndex(0);
+        var menuItem = menu.itemAtIndex(1);
         
         //if we are not running
         if(status == 0 || status == 2) {
@@ -83,14 +91,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             timerPaused = false;
             
             //change menu item to say Pause
-            menuItem.title = "Pause Timer";
+            menuItem.title = "Stop Timer";
             
             //start timer
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: sel, userInfo: nil, repeats: true);
         //if we are running
         } else {
             //change menu item to say Resume
-            menuItem.title = "Resume Timer";
+            menuItem.title = "Start Timer";
 
             //pause the timer
             stopTimer();
@@ -116,10 +124,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var seconds : Int = totalSeconds % 60;
         var minutes : Int = (totalSeconds / 60) % 60;
         var hours : Int = totalSeconds / 3600;
-        
+
+        //get first menu item so we can change the text based on status
+        var menuItem = menu.itemAtIndex(0);
         
         //concatenate minuets, seconds and milliseconds
-        statusBarItem.title = buildStr(hours : hours, minutes : minutes, seconds : seconds);
+        menuItem.title = buildStr(hours : hours, minutes : minutes, seconds : seconds);
     }
     
     //add leading zeros and concatenate values into a string
@@ -131,7 +141,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let strSeconds = seconds > 9 ? String(seconds):"0" + String(seconds);
         
         //build string with surrounding brackets and colons between values
-        var timeStr = "[\(strHours):\(strMinutes):\(strSeconds)]";
+        var timeStr = "\(strHours):\(strMinutes)"; //":\(strSeconds)";
         
         //return the time string
         return timeStr;
@@ -141,14 +151,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func resetTimer() {
         timer.invalidate();
         
-        statusBarItem.title = "[00:00:00]";
+        //get first menu item so we can change the text based on status
+        var menuItem = menu.itemAtIndex(0);
+        
+        //concatenate minuets, seconds and milliseconds
+        menuItem.title = "00:00"; //:00";
+        
+        //get status
+        var status = checkStatus();
         
         //if the timer is already running, we want to reset it and start it
-        if(timerRunning) {
+        if(status == 1) {
             timerRunning = false;
             totalSeconds = 0;
             toggleTimer();
+        } else {
+            timerRunning = false;
+            timerPaused = false;
+            
+            //get first menu item so we can change the text based on status
+            var menuItem = menu.itemAtIndex(1);
+            
+            menuItem.title = "Start Timer";
         }
+    }
+    
+    func quitSimpleTimer() {
+        exit(0);
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification?) {

@@ -11,6 +11,8 @@
 		FE69C01819DA4450001D5688 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE69C01719DA4450001D5688 /* Images.xcassets */; };
 		FE69C01B19DA4450001D5688 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE69C01919DA4450001D5688 /* MainMenu.xib */; };
 		FE69C02719DA4450001D5688 /* Simple_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69C02619DA4450001D5688 /* Simple_TimerTests.swift */; };
+		FE69C03119DC880A001D5688 /* stopwatch.svg in Resources */ = {isa = PBXBuildFile; fileRef = FE69C03019DC880A001D5688 /* stopwatch.svg */; };
+		FE69C03319DC9266001D5688 /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = FE69C03219DC9266001D5688 /* stopwatch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		FE69C02019DA4450001D5688 /* Simple TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE69C02519DA4450001D5688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE69C02619DA4450001D5688 /* Simple_TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_TimerTests.swift; sourceTree = "<group>"; };
+		FE69C03019DC880A001D5688 /* stopwatch.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = stopwatch.svg; sourceTree = "<group>"; };
+		FE69C03219DC9266001D5688 /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 				FE69C01519DA4450001D5688 /* AppDelegate.swift */,
 				FE69C01719DA4450001D5688 /* Images.xcassets */,
 				FE69C01919DA4450001D5688 /* MainMenu.xib */,
+				FE69C03219DC9266001D5688 /* stopwatch.png */,
 				FE69C01319DA4450001D5688 /* Supporting Files */,
 			);
 			path = "Simple Timer";
@@ -84,6 +89,7 @@
 		FE69C01319DA4450001D5688 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE69C03019DC880A001D5688 /* stopwatch.svg */,
 				FE69C01419DA4450001D5688 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -188,7 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE69C01819DA4450001D5688 /* Images.xcassets in Resources */,
+				FE69C03319DC9266001D5688 /* stopwatch.png in Resources */,
 				FE69C01B19DA4450001D5688 /* MainMenu.xib in Resources */,
+				FE69C03119DC880A001D5688 /* stopwatch.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
