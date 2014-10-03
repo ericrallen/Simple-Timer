@@ -13,9 +13,10 @@ import Darwin
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     //variables for setting up our menu
-    var statusBar = NSStatusBar.systemStatusBar();
+    var statusBar : NSStatusBar = NSStatusBar.systemStatusBar();
     var statusBarItem : NSStatusItem = NSStatusItem();
     var menu : NSMenu = NSMenu();
+    var lastMinute : Int? = nil;
 
     //array of items for our menus and the functions they should trigger when clicked
     var menuItems = [
@@ -113,6 +114,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //switch flags
         timerRunning = false;
         timerPaused = true;
+        
+        statusBarItem.title = "";
     }
     
     //increase timer
@@ -124,12 +127,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var seconds : Int = totalSeconds % 60;
         var minutes : Int = (totalSeconds / 60) % 60;
         var hours : Int = totalSeconds / 3600;
-
+        
         //get first menu item so we can change the text based on status
         var menuItem = menu.itemAtIndex(0);
         
         //concatenate minuets, seconds and milliseconds
-        menuItem.title = buildStr(hours : hours, minutes : minutes, seconds : seconds);
+        var timeStr = buildStr(hours : hours, minutes : minutes, seconds : seconds);
+        menuItem.title = timeStr;
+        
+        if(lastMinute != minutes) {
+            statusBarItem.title = timeStr;
+        }
+
+        lastMinute = minutes;
     }
     
     //add leading zeros and concatenate values into a string
@@ -153,6 +163,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         //get first menu item so we can change the text based on status
         var menuItem = menu.itemAtIndex(0);
+        
+        lastMinute = nil;
         
         //concatenate minuets, seconds and milliseconds
         menuItem.title = "00:00"; //:00";
