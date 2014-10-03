@@ -80,7 +80,6 @@
 				FE69C01519DA4450001D5688 /* AppDelegate.swift */,
 				FE69C01719DA4450001D5688 /* Images.xcassets */,
 				FE69C01919DA4450001D5688 /* MainMenu.xib */,
-				FE69C03219DC9266001D5688 /* stopwatch.png */,
 				FE69C01319DA4450001D5688 /* Supporting Files */,
 			);
 			path = "Simple Timer";
@@ -89,6 +88,7 @@
 		FE69C01319DA4450001D5688 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE69C03219DC9266001D5688 /* stopwatch.png */,
 				FE69C03019DC880A001D5688 /* stopwatch.svg */,
 				FE69C01419DA4450001D5688 /* Info.plist */,
 			);
@@ -402,6 +402,7 @@
 				FE69C02C19DA4450001D5688 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE69C02D19DA4450001D5688 /* Build configuration list for PBXNativeTarget "Simple TimerTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +411,7 @@
 				FE69C02F19DA4450001D5688 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

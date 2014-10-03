@@ -104,7 +104,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             //pause the timer
             stopTimer();
         }
-        
     }
     
     //pause the timer
@@ -114,6 +113,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //switch flags
         timerRunning = false;
         timerPaused = true;
+        
+        lastMinute = nil;
         
         statusBarItem.title = "";
     }
