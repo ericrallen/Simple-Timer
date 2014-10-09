@@ -10,8 +10,18 @@ import Cocoa
 import Darwin
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate : NSObject, NSApplicationDelegate {
 
+    @IBOutlet weak var aboutWindow : NSWindow!
+    //let controller = NSWindowController(window : aboutWindow);
+    
+    /*let aboutWindow = NSWindow(
+        contentRect : NSMakeRect(100, 100, 600, 200),
+        styleMask : NSResizableWindowMask,
+        backing : NSBackingStoreType.Buffered,
+        defer : true
+    );*/
+    
     //variables for setting up our menu
     var statusBar : NSStatusBar = NSStatusBar.systemStatusBar();
     var statusBarItem : NSStatusItem = NSStatusItem();
@@ -19,10 +29,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var lastMinute : Int? = nil;
 
     //array of items for our menus and the functions they should trigger when clicked
-    var menuItems = [
+    let menuItems = [
         (name : "00:00", act : Selector("toggleTimer")),
         (name : "Start Timer", act : Selector("toggleTimer")),
         (name : "Reset Timer", act : Selector("resetTimer")),
+        (name : "About SimpleTimer", act : Selector("showAboutWindow")),
         (name : "Quit", act : Selector("quitSimpleTimer"))
     ];
     
@@ -187,6 +198,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             menuItem.title = "Start Timer";
         }
+    }
+    
+    func showAboutWindow() {
+        aboutWindow.makeKeyAndOrderFront(aboutWindow);
     }
     
     func quitSimpleTimer() {

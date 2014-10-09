@@ -13,6 +13,12 @@
 		FE69C02719DA4450001D5688 /* Simple_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE69C02619DA4450001D5688 /* Simple_TimerTests.swift */; };
 		FE69C03119DC880A001D5688 /* stopwatch.svg in Resources */ = {isa = PBXBuildFile; fileRef = FE69C03019DC880A001D5688 /* stopwatch.svg */; };
 		FE69C03319DC9266001D5688 /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = FE69C03219DC9266001D5688 /* stopwatch.png */; };
+		FEF3ADB919E6E75600991C4F /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB319E6E75600991C4F /* icon_16x16.png */; };
+		FEF3ADBA19E6E75600991C4F /* icon_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB419E6E75600991C4F /* icon_32x32.png */; };
+		FEF3ADBB19E6E75600991C4F /* icon_32x32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB519E6E75600991C4F /* icon_32x32@2x.png */; };
+		FEF3ADBC19E6E75600991C4F /* icon_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB619E6E75600991C4F /* icon_256x256.png */; };
+		FEF3ADBD19E6E75600991C4F /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB719E6E75600991C4F /* icon_512x512.png */; };
+		FEF3ADBE19E6E75600991C4F /* icon_512x512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF3ADB819E6E75600991C4F /* icon_512x512@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		FE69C02619DA4450001D5688 /* Simple_TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_TimerTests.swift; sourceTree = "<group>"; };
 		FE69C03019DC880A001D5688 /* stopwatch.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = stopwatch.svg; sourceTree = "<group>"; };
 		FE69C03219DC9266001D5688 /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
+		FEF3ADB319E6E75600991C4F /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
+		FEF3ADB419E6E75600991C4F /* icon_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_32x32.png; sourceTree = "<group>"; };
+		FEF3ADB519E6E75600991C4F /* icon_32x32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_32x32@2x.png"; sourceTree = "<group>"; };
+		FEF3ADB619E6E75600991C4F /* icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256x256.png; sourceTree = "<group>"; };
+		FEF3ADB719E6E75600991C4F /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512x512.png; sourceTree = "<group>"; };
+		FEF3ADB819E6E75600991C4F /* icon_512x512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_512x512@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,12 @@
 		FE69C01319DA4450001D5688 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FEF3ADB319E6E75600991C4F /* icon_16x16.png */,
+				FEF3ADB419E6E75600991C4F /* icon_32x32.png */,
+				FEF3ADB519E6E75600991C4F /* icon_32x32@2x.png */,
+				FEF3ADB619E6E75600991C4F /* icon_256x256.png */,
+				FEF3ADB719E6E75600991C4F /* icon_512x512.png */,
+				FEF3ADB819E6E75600991C4F /* icon_512x512@2x.png */,
 				FE69C03219DC9266001D5688 /* stopwatch.png */,
 				FE69C03019DC880A001D5688 /* stopwatch.svg */,
 				FE69C01419DA4450001D5688 /* Info.plist */,
@@ -193,8 +211,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF3ADBE19E6E75600991C4F /* icon_512x512@2x.png in Resources */,
 				FE69C01819DA4450001D5688 /* Images.xcassets in Resources */,
+				FEF3ADB919E6E75600991C4F /* icon_16x16.png in Resources */,
+				FEF3ADBD19E6E75600991C4F /* icon_512x512.png in Resources */,
 				FE69C03319DC9266001D5688 /* stopwatch.png in Resources */,
+				FEF3ADBB19E6E75600991C4F /* icon_32x32@2x.png in Resources */,
+				FEF3ADBA19E6E75600991C4F /* icon_32x32.png in Resources */,
+				FEF3ADBC19E6E75600991C4F /* icon_256x256.png in Resources */,
 				FE69C01B19DA4450001D5688 /* MainMenu.xib in Resources */,
 				FE69C03119DC880A001D5688 /* stopwatch.svg in Resources */,
 			);
