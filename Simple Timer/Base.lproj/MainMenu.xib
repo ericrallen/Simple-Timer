@@ -17,20 +17,28 @@
                 <outlet property="aboutWindow" destination="LEO-8Y-o5K" id="7am-vD-AHE"/>
             </connections>
         </customObject>
-        <window title="About SimpleTimer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LEO-8Y-o5K">
+        <window title="About SimpleTimer" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="alertPanel" id="LEO-8Y-o5K">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="120" y="65" width="276" height="378"/>
+            <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES" stationary="YES" ignoresCycle="YES"/>
+            <rect key="contentRect" x="534" y="236" width="276" height="378"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="LZl-Lg-DnV">
                 <rect key="frame" x="0.0" y="0.0" width="276" height="378"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-rv-ktK">
-                        <rect key="frame" x="18" y="171" width="240" height="187"/>
+                        <rect key="frame" x="18" y="264" width="240" height="94"/>
                         <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="5OV-XI-hed">
                             <font key="font" metaFont="system"/>
-                            <string key="title">SimpleTimer was created by Eric Allen (@allenericr) for people who are tired of overly complex timers and just want a simple way to keep track of time spent working on something. Icon made by Freepik (http://www.freepik.com) from www.flaticon.com is licensed under CC BY 3.0 (http://creativecommons.org/licenses/by/3.0/).</string>
+                            <string key="title">SimpleTimer was created for people who are tired of overly complex timers and just want a simple way to keep track of time spent working on something.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-cE-VvT">
+                        <rect key="frame" x="18" y="222" width="240" height="34"/>
+                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Icon made by Freepik from www.flaticon.com (CC BY 3.0)." id="lYZ-vF-7Ms">
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

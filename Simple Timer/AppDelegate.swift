@@ -11,16 +11,8 @@ import Darwin
 
 @NSApplicationMain
 class AppDelegate : NSObject, NSApplicationDelegate {
-
-    @IBOutlet weak var aboutWindow : NSWindow!
-    //let controller = NSWindowController(window : aboutWindow);
     
-    /*let aboutWindow = NSWindow(
-        contentRect : NSMakeRect(100, 100, 600, 200),
-        styleMask : NSResizableWindowMask,
-        backing : NSBackingStoreType.Buffered,
-        defer : true
-    );*/
+    @IBOutlet weak var aboutWindow : NSWindow!
     
     //variables for setting up our menu
     var statusBar : NSStatusBar = NSStatusBar.systemStatusBar();
@@ -178,7 +170,7 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         
         lastMinute = nil;
         
-        //concatenate minuets, seconds and milliseconds
+        //reset menu item to 00:00
         menuItem.title = "00:00"; //:00";
         
         //get status
@@ -202,10 +194,10 @@ class AppDelegate : NSObject, NSApplicationDelegate {
     
     func showAboutWindow() {
         aboutWindow.makeKeyAndOrderFront(aboutWindow);
+        aboutWindow.level = 99999;
     }
     
     func quitSimpleTimer() {
         exit(0);
     }
-
 }
