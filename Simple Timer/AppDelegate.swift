@@ -169,6 +169,7 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         var menuItem = menu.itemAtIndex(0);
         
         lastMinute = nil;
+        totalSeconds = 0;
         
         //reset menu item to 00:00
         menuItem.title = "00:00"; //:00";
