@@ -15,10 +15,9 @@ class AppDelegate : NSObject, NSApplicationDelegate {
     @IBOutlet weak var aboutWindow : NSWindow!
     
     //variables for setting up our menu
-    var statusBar : NSStatusBar = NSStatusBar.systemStatusBar();
+    let statusBar : NSStatusBar = NSStatusBar.systemStatusBar();
     var statusBarItem : NSStatusItem = NSStatusItem();
-    var menu : NSMenu = NSMenu();
-    var lastMinute : Int? = nil;
+    let menu : NSMenu = NSMenu();
 
     //array of items for our menus and the functions they should trigger when clicked
     let menuItems = [
@@ -34,6 +33,9 @@ class AppDelegate : NSObject, NSApplicationDelegate {
 
     //start without any seconds recorded
     var totalSeconds = 0;
+    
+    var colonActive : Bool = true;
+    var timeSep = ":";
     
     //boolean flags for paused or running status
     var timerRunning : Bool = false;
@@ -116,8 +118,7 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         //switch flags
         timerRunning = false;
         timerPaused = true;
-        
-        lastMinute = nil;
+        colonActive = true;
         
         statusBarItem.title = "";
     }
@@ -139,11 +140,7 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         var timeStr = buildStr(hours : hours, minutes : minutes, seconds : seconds);
         menuItem.title = timeStr;
         
-        if(lastMinute != minutes) {
-            statusBarItem.title = timeStr;
-        }
-
-        lastMinute = minutes;
+        statusBarItem.title = timeStr;
     }
     
     //add leading zeros and concatenate values into a string
@@ -154,8 +151,16 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         let strMinutes = minutes > 9 ? String(minutes):"0" + String(minutes);
         let strSeconds = seconds > 9 ? String(seconds):"0" + String(seconds);
         
+        if(colonActive == false) {
+            timeSep = " ";
+            colonActive = true;
+        } else {
+            colonActive = false;
+            timeSep = ":";
+        }
+        
         //build string with surrounding brackets and colons between values
-        var timeStr = "\(strHours):\(strMinutes)"; //":\(strSeconds)";
+        var timeStr = "\(strHours)\(timeSep)\(strMinutes)"; //":\(strSeconds)";
         
         //return the time string
         return timeStr;
@@ -168,7 +173,6 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         //get first menu item so we can change the text based on status
         var menuItem = menu.itemAtIndex(0);
         
-        lastMinute = nil;
         totalSeconds = 0;
         
         //reset menu item to 00:00
@@ -185,6 +189,9 @@ class AppDelegate : NSObject, NSApplicationDelegate {
         } else {
             timerRunning = false;
             timerPaused = false;
+            
+            colonActive = true;
+            timeSep = ":";
             
             //get first menu item so we can change the text based on status
             var menuItem = menu.itemAtIndex(1);
